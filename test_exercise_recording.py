@@ -323,7 +323,7 @@ class ExerciseRecordingTest:
             
             # Find the file input element
             file_input = self.wait.until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']"))
+                EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']"))``
             )
             
             # Get the absolute path of the file from Downloads folder
