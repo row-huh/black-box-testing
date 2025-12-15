@@ -98,18 +98,19 @@ class ExerciseRecordingPart1:
                 EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']"))
             )
             
-            downloads_folder = os.path.join(os.path.expanduser("~"), "Downloads")
-            file_path = os.path.join(downloads_folder, filename)
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            test_videos_folder = os.path.join(current_dir, "test-videos")
+            file_path = os.path.join(test_videos_folder, filename)
             
             if not os.path.exists(file_path):
-                print(f"Warning: File {file_path} does not exist in Downloads folder.")
-                print(f"Please ensure {filename} is in your Downloads folder: {downloads_folder}")
+                print(f"Warning: File {file_path} does not exist in test-videos folder.")
+                print(f"Please ensure {filename} is in your test-videos folder: {test_videos_folder}")
             else:
                 print(f"Found file at: {file_path}")
             
             file_input.send_keys(file_path)
             time.sleep(3)
-            print(f"File {filename} uploaded successfully from Downloads folder")
+            print(f"File {filename} uploaded successfully from test-videos folder")
             
         except TimeoutException:
             print("Could not find upload button or file input")

@@ -73,8 +73,9 @@ class ExerciseRecordingTest:
             file_input = self.wait.until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']"))
             )
-            downloads_folder = os.path.join(os.path.expanduser("~"), "Downloads")
-            file_path = os.path.join(downloads_folder, filename)
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            test_videos_folder = os.path.join(current_dir, "test-videos")
+            file_path = os.path.join(test_videos_folder, filename)
             if not os.path.exists(file_path):
                 pass
             file_input.send_keys(file_path)
@@ -231,8 +232,9 @@ class ExerciseRecordingTest:
             file_input = self.wait.until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']"))
             )
-            downloads_folder = os.path.join(os.path.expanduser("~"), "Downloads")
-            file_path = os.path.join(downloads_folder, filename)
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            test_videos_folder = os.path.join(current_dir, "test-videos")
+            file_path = os.path.join(test_videos_folder, filename)
             if not os.path.exists(file_path):
                 pass
             file_input.send_keys(file_path)
