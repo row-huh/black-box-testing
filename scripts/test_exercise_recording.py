@@ -74,7 +74,8 @@ class ExerciseRecordingTest:
                 EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']"))
             )
             current_dir = os.path.dirname(os.path.abspath(__file__))
-            test_videos_folder = os.path.join(current_dir, "test-videos")
+            parent_dir = os.path.dirname(current_dir)
+            test_videos_folder = os.path.join(parent_dir, "test-videos")
             file_path = os.path.join(test_videos_folder, filename)
             if not os.path.exists(file_path):
                 pass
@@ -233,7 +234,8 @@ class ExerciseRecordingTest:
                 EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='file']"))
             )
             current_dir = os.path.dirname(os.path.abspath(__file__))
-            test_videos_folder = os.path.join(current_dir, "test-videos")
+            parent_dir = os.path.dirname(current_dir)
+            test_videos_folder = os.path.join(parent_dir, "test-videos")
             file_path = os.path.join(test_videos_folder, filename)
             if not os.path.exists(file_path):
                 pass
